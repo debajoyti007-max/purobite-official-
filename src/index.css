@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light;
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: #faf8f5;
+    color: #1e2420;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+
+  /* Refined warm scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #faf8f5;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d6cebf;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b5aa96;
+  }
+}
+
+/* Typography Utility Classes */
+.font-serif-luxury {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-display-brand {
+  font-family: "Cinzel", Georgia, serif;
+  letter-spacing: 0.08em;
+}
+
+/* Clean, Premium Food E-Commerce Card (Inspired by VNPR Foods) */
+.food-card {
+  background-color: #ffffff;
+  border: 1px solid #e8e3d8;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px -2px rgba(28, 36, 31, 0.05);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.food-card:hover {
+  border-color: #d4a961;
+  box-shadow: 0 12px 32px -4px rgba(180, 121, 25, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Elevated Featured Box */
+.food-card-featured {
+  background: linear-gradient(180deg, #ffffff 0%, #fdfbf7 100%);
+  border: 1.5px solid #d4a961;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px -4px rgba(180, 121, 25, 0.14);
+}
+
+/* Warm Parchment Pill */
+.parchment-pill {
+  background-color: #f4efe6;
+  border: 1px solid #e2dac9;
+  color: #3b3223;
+}
+
+/* Botanical Herbal Pill */
+.herbal-pill {
+  background-color: #eef6f1;
+  border: 1px solid #c7e1d1;
+  color: #164028;
+}
+
+/* Tactile Button Press */
+.touch-press:active {
+  transform: scale(0.97);
+  transition: transform 0.1s ease;
+}
