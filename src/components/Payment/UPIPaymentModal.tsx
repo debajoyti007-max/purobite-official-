@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import QRCode from "qrcode"
 import { X, Copy, Check, MessageCircle, ShieldCheck, QrCode } from "lucide-react"
-import { PUROBITE_CONTACT, type ProductPack } from "../../data/purobiteData"
+import { PUROBITE_CONTACT, getWhatsAppUrl, type ProductPack } from "../../data/purobiteData"
 
 interface UPIPaymentModalProps {
   pack: ProductPack | null
@@ -46,9 +46,9 @@ export default function UPIPaymentModal({ pack, onClose }: UPIPaymentModalProps)
   }
 
   // Pre-filled WhatsApp confirmation message
-  const whatsappConfirmUrl = `https://wa.me/918250755958?text=${encodeURIComponent(
+  const whatsappConfirmUrl = getWhatsAppUrl(
     `Hello PuroBite! I have completed payment of ₹${amount} for: ${packName}.\n\nHere are my delivery details:\nName: \nAddress: \nPincode: \n\n(Attaching payment screenshot below)`
-  )}`
+  )
 
   if (!pack) return null
 

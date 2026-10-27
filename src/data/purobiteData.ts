@@ -49,6 +49,14 @@ export const PUROBITE_CONTACT = {
   shelfLife: "6 Months from Handcrafted Date",
 }
 
+/**
+ * Standardized WhatsApp ordering link generator
+ */
+export function getWhatsAppUrl(text: string): string {
+  const digitsOnly = PUROBITE_CONTACT.phoneRaw.replace(/[^0-9]/g, "")
+  return `https://wa.me/${digitsOnly}?text=${encodeURIComponent(text)}`
+}
+
 export const PUROBITE_IMAGES = {
   hero: "./purobite/purobite-hero.jpg",
   front: "./purobite/purobite-front.jpg",
@@ -56,44 +64,6 @@ export const PUROBITE_IMAGES = {
   table: "./purobite/purobite-table.jpg",
   infographic: "./purobite/purobite-infographic.jpg",
 }
-
-export const GALLERY_VIEWS = [
-  {
-    id: "hero",
-    title: "Artisanal Banana Chew",
-    subtitle: "Handcrafted with ripe bananas, whole almonds, and cashews",
-    src: PUROBITE_IMAGES.hero,
-    tag: "Signature Pack",
-  },
-  {
-    id: "infographic",
-    title: "What's Inside Our Banana Chew",
-    subtitle: "Official packaging ingredients breakdown",
-    src: PUROBITE_IMAGES.infographic,
-    tag: "Packaging Facts",
-  },
-  {
-    id: "front",
-    title: "Hand-Packed Kraft Tub",
-    subtitle: "Airtight seal preserving natural crunch and chewiness",
-    src: PUROBITE_IMAGES.front,
-    tag: "Airtight Seal",
-  },
-  {
-    id: "table",
-    title: "Handcrafted in Kolkata",
-    subtitle: "Real texture and whole roasted nuts",
-    src: PUROBITE_IMAGES.table,
-    tag: "Kitchen Batch",
-  },
-  {
-    id: "flatlay",
-    title: "Whole Natural Ingredients",
-    subtitle: "Nuts, seeds, and slow-dehydrated ripe bananas",
-    src: PUROBITE_IMAGES.flatlay,
-    tag: "100% Natural",
-  },
-]
 
 export const PRODUCT_PACKS: ProductPack[] = [
   {
@@ -159,42 +129,41 @@ export const PRODUCT_PACKS: ProductPack[] = [
   },
 ]
 
-export const PRODUCT_CATEGORIES = [
-  { id: "all", name: "All Tubs", count: 3 },
-  { id: "single", name: "Single Tubs", count: 2 },
-  { id: "bundle", name: "Bundles", count: 1 },
-]
-
 // The 5 real ingredients verified directly on PuroBite packaging infographic
 export const REAL_INGREDIENTS: IngredientItem[] = [
   {
     id: "bananas",
     name: "Ripe Cavendish Bananas",
-    benefit: "Naturally slow-dehydrated to concentrate fruit sweetness without any added sugar. Natural potassium & steady energy.",
+    benefit:
+      "Naturally slow-dehydrated to concentrate fruit sweetness without any added sugar. Natural potassium & steady energy.",
     highlight: "Natural Potassium & Energy",
   },
   {
     id: "almonds",
     name: "Whole California Almonds",
-    benefit: "Dry-roasted whole for a satisfying crisp snap. Provides heart-healthy plant fats and antioxidant Vitamin E.",
+    benefit:
+      "Dry-roasted whole for a satisfying crisp snap. Provides heart-healthy plant fats and antioxidant Vitamin E.",
     highlight: "Healthy Fats & Vitamin E",
   },
   {
     id: "cashews",
     name: "Crunchy Whole Cashews",
-    benefit: "Buttery, creamy whole cashew nuts delivering bioavailable plant protein and essential dietary minerals.",
+    benefit:
+      "Buttery, creamy whole cashew nuts delivering bioavailable plant protein and essential dietary minerals.",
     highlight: "Plant Protein & Minerals",
   },
   {
     id: "pumpkin-seeds",
     name: "Roasted Pumpkin Seeds",
-    benefit: "Nutrient-dense green pepitas providing natural dietary zinc, magnesium, and subtle earthy crunch.",
+    benefit:
+      "Nutrient-dense green pepitas providing natural dietary zinc, magnesium, and subtle earthy crunch.",
     highlight: "Zinc & Magnesium",
   },
   {
     id: "sesame-seeds",
     name: "Toasted Sesame Seeds",
-    benefit: "Traditional toasted seeds rolled across the banana chew for delicate aroma, plant calcium, and dietary fiber.",
+    benefit:
+      "Traditional toasted seeds rolled across the banana chew for delicate aroma, plant calcium, and dietary fiber.",
     highlight: "Calcium & Fiber",
   },
 ]

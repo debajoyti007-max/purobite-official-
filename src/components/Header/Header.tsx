@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { MessageCircle, Phone, Menu, X } from "lucide-react"
-import { PUROBITE_CONTACT } from "../../data/purobiteData"
+import { PUROBITE_CONTACT, getWhatsAppUrl } from "../../data/purobiteData"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -21,9 +21,7 @@ export default function Header() {
     { label: "Contact", href: "#contact" },
   ]
 
-  const whatsappUrl = `https://wa.me/918250755958?text=${encodeURIComponent(
-    "Hello PuroBite! I'd like to order Banana Chew handcrafted pack."
-  )}`
+  const whatsappUrl = getWhatsAppUrl("Hello PuroBite! I'd like to order Banana Chew handcrafted pack.")
 
   return (
     <header

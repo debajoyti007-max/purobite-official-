@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react"
-import { PUROBITE_IMAGES } from "../../data/purobiteData"
+import { PUROBITE_IMAGES, getWhatsAppUrl } from "../../data/purobiteData"
 
 export default function Hero() {
   const [activePhoto, setActivePhoto] = useState<"hero" | "infographic" | "front">("hero")
@@ -20,9 +20,7 @@ export default function Hero() {
     },
   }
 
-  const whatsappUrl = `https://wa.me/918250755958?text=${encodeURIComponent(
-    "Hello PuroBite! I'd like to order Banana Chew handcrafted pack."
-  )}`
+  const whatsappUrl = getWhatsAppUrl("Hello PuroBite! I'd like to order Banana Chew handcrafted pack.")
 
   return (
     <section id="hero" className="relative pt-6 pb-12 sm:pt-10 sm:pb-16 overflow-hidden">

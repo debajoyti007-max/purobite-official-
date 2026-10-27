@@ -1,6 +1,6 @@
 import { Phone, MapPin, MessageCircle, Sparkles } from "lucide-react"
 import { InstagramIcon, FacebookIcon } from "../icons/SocialIcons"
-import { PUROBITE_CONTACT } from "../../data/purobiteData"
+import { PUROBITE_CONTACT, getWhatsAppUrl } from "../../data/purobiteData"
 
 export default function Contact() {
   return (
@@ -41,7 +41,7 @@ export default function Contact() {
 
           {/* WhatsApp */}
           <a
-            href="https://wa.me/918250755958?text=Hello%20PuroBite!%20I'd%20like%20to%20order%20handcrafted%20Banana%20Chew."
+            href={getWhatsAppUrl("Hello PuroBite! I'd like to order handcrafted Banana Chew.")}
             target="_blank"
             rel="noreferrer"
             className="p-5 rounded-2xl bg-white border border-[#e8e3d8] text-center hover:border-[#193322] transition-colors shadow-2xs group"

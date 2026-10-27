@@ -1,10 +1,8 @@
 import { Phone, MessageCircle } from "lucide-react"
-import { PUROBITE_CONTACT } from "../../data/purobiteData"
+import { PUROBITE_CONTACT, getWhatsAppUrl } from "../../data/purobiteData"
 
 export default function FloatingDock() {
-  const whatsappUrl = `https://wa.me/918250755958?text=${encodeURIComponent(
-    "Hello PuroBite! I'd like to order handcrafted Banana Chew."
-  )}`
+  const whatsappUrl = getWhatsAppUrl("Hello PuroBite! I'd like to order handcrafted Banana Chew.")
 
   return (
     <div className="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-40 px-3 py-2 rounded-2xl bg-[#141b16]/95 backdrop-blur-md border border-white/10 shadow-lg flex items-center gap-2 max-w-[95%]">

@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Check, MessageCircle, Sparkles, QrCode } from "lucide-react"
-import { PRODUCT_PACKS, type ProductPack } from "../../data/purobiteData"
+import { PRODUCT_PACKS, getWhatsAppUrl, type ProductPack } from "../../data/purobiteData"
 import UPIPaymentModal from "../Payment/UPIPaymentModal"
 
 export default function ProductSection() {
@@ -30,9 +30,9 @@ export default function ProductSection() {
           {PRODUCT_PACKS.map((pack) => {
             const isSignature = pack.recommended
 
-            const whatsappUrl = `https://wa.me/918250755958?text=${encodeURIComponent(
+            const whatsappUrl = getWhatsAppUrl(
               `Hello PuroBite! I'd like to order: 1x ${pack.name} (${pack.weight}) for ₹${pack.price}. Please confirm delivery details for my address.`
-            )}`
+            )
 
             return (
               <div
